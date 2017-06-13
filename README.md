@@ -51,6 +51,9 @@ Python 2.7 64bit + MongoDB （请确保环境为64位，防止爬虫中的queue�
 - [点击加编程开发交流群2：578165753][4]
 
 
+![](http://wx3.sinaimg.cn/mw690/734c5972gy1fgjo49srxbj21hc0u07b3.jpg)
+
+
   [1]: https://tieba.baidu.com/p/3999225388
   [2]: https://tieba.baidu.com/p/4013743860
   [3]: https://jq.qq.com/?_wv=1027&k=4AO35rV
