@@ -32,12 +32,12 @@ config['password'] = ''
 config['timeout'] = 6
 
 # ---------- spider ---------- #
-# 要抓取的贴吧名称（不要带“吧”字，比如说要抓取php吧，直接输入php即可）
-config['forum_name'] = '武汉船舶职业技术学院'
+# 要抓取的贴吧名称（不要带“吧”字，比如说要抓取昌维吧，直接输入昌维即可）
+config['forum_name'] = '昌维'
 # 线程数量，根据自己网络环境和硬件配置设置
-config['thread_num'] = 20
+config['thread_num'] = 50
 # 抓取页码集合，一页是20条用户记录，可用range生成器批量生成连续的页码，起始页码为1，所以range第一个参数不能小于1.
-config['pages'] = range(1, 100000)
+config['pages'] = range(1, 1000)
 
 # ---------- post ---------- #
 # 发帖帐号的bduss，一般为192位，使用list进行存储多个账号轮流发送防止验证码，请将下列示例bduss修改为自己的bduss
@@ -57,7 +57,7 @@ config['wait_time'] = 60
 # 帖子id，比如说你从地址栏复制的帖子链接为https://tieba.baidu.com/p/4296390791，那么帖子id就为 4296390791
 config['post_thread_id'] = '4296390791'
 # 发送祝福的吧友所在贴吧，比如说你想给昌维吧的所有当天过生日的吧友发送祝福，那么此处填写“昌维”即可
-config['post_forum_name'] = '武汉船舶职业技术学院'
+config['post_forum_name'] = '昌维'
 # 祝福语录，发帖时会随机选择并追加至回帖内容末尾
 config['wish'] = [
     '新的一岁祝你顺顺利利，每天开心。',

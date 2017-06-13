@@ -29,7 +29,7 @@ class TiebaSpider(object):
         # super(TiebaSpider, self).__init__()
         # self.arg = arg
 
-    def fetchMembersByForum(self, forum_name='昌维', page=1):
+    def fetchMembersByForum(self, forum_name, page=1):
         members = []
         url = 'http://tieba.baidu.com/f/like/furank'
         kw = str(forum_name)
@@ -44,7 +44,7 @@ class TiebaSpider(object):
             members.append(m.get_text())
         return members
 
-    def fetchDetailByUsername(self, username='昌维001'):
+    def fetchDetailByUsername(self, username):
         detail = {}
         url = 'https://www.baidu.com/p/%s/detail?ie=utf-8' % username
         try:
@@ -78,7 +78,7 @@ class TiebaSpider(object):
                 detail['address'] = cnt = cnt_soup[i].get_text()
         return detail
 
-    def fetchRankNumByForum(self, forum_name='昌维'):
+    def fetchRankNumByForum(self, forum_name):
         """获取贴吧排行榜用户"""
         url = 'http://tieba.baidu.com/f/like/furank'
         kw = str(forum_name)

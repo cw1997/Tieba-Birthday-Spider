@@ -44,7 +44,7 @@ def main():
     forum_result = forum_collection.find_one({'forum_name': config['post_forum_name']})
     forum_id = forum_result['forum_id']
 
-    # y = time.strftime("%Y")
+    y = int(time.strftime("%Y"))
     # 通过二次数据类型转换是为了移除单位数日期前面带的0，也就是将06转换为6
     m = str(int(time.strftime("%m")))
     d = str(int(time.strftime("%d")))
@@ -62,7 +62,7 @@ def main():
     wait_time = config['wait_time']
     for member in member_list:
         # print member
-        content = buildContent(member, member_count)
+        content = buildContent(member, member_count, y)
         # print content
         bduss = bduss_list[i % bduss_list_num]
         islogin = tieba_util.login(bduss)
@@ -78,12 +78,13 @@ def main():
         time.sleep(wait_time)
 
 
-def buildContent(member, member_count):
+def buildContent(member, member_count, now_year):
     """回复内容模版构造，member为祝福对象的dict，member_count为当天过生日的总人数，用户可根据自己需要自行修改"""
     content = ''
     gender = ''
     member_gender = member[u'gender']
     member_username = member[u'username']
+    member_birthday_year = int(member[u'birthday'][u'year'])
     if member_gender == u'男':
         gender = '帅帅哒的汉纸'
     elif member_gender == u'女':
@@ -91,9 +92,9 @@ def buildContent(member, member_count):
     else:
         gender = '吧友'
     wish_num = len(config['wish'])
-    content = '祝@%s %s生日快乐哈！今天是%s，在%s吧内共有%s位吧友和你同样幸运的降临在了这个神奇的日子' \
+    content = '祝@%s %s生日快乐哈！今天是%s，也是你%d岁的生日，在%s吧内共有%s位吧友和你同样幸运的降临在了这个神奇的日子' \
               '，让我们一起祝福他们破壳日快乐！！！%s' % \
-              (member_username, gender, time.strftime('%Y年%m月%d日'), config['post_forum_name'], \
+              (member_username, gender, time.strftime('%Y年%m月%d日'), now_year - member_birthday_year, config['post_forum_name'], \
                member_count, config['wish'][random.randint(0, wish_num - 1)])
     return content
 
