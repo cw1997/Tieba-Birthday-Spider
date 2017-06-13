@@ -30,10 +30,16 @@ Python 2.7 64bit + MongoDB （请确保环境为64位，防止爬虫中的queue�
 - 使用threading多线程库+Queue队列，性能高效
 - MongoDB持久化存储爬虫内容，适合抓取内容结构随时可变的场景
 
+# 成功案例
+- [BUG吧][1]
+- [武汉船舶职业技术学院吧][2]
+
 # 交流QQ群 
-- [点击加贴吧闲聊群1：255258140][1]
-- [点击加编程开发交流群2：578165753][2]
+- [点击加贴吧闲聊群1：255258140][3]
+- [点击加编程开发交流群2：578165753][4]
 
 
-  [1]: https://jq.qq.com/?_wv=1027&k=4AO35rV
-  [2]: https://jq.qq.com/?_wv=1027&k=4AO3qTM
+  [1]: https://tieba.baidu.com/p/3999225388
+  [2]: http://tieba.baidu.com/p/4013743860
+  [3]: https://jq.qq.com/?_wv=1027&k=4AO35rV
+  [4]: https://jq.qq.com/?_wv=1027&k=4AO3qTM
