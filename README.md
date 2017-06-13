@@ -14,10 +14,11 @@ Python 2.7 64bit + MongoDB （请确保环境为64位，防止爬虫中的queue�
 
 # 使用方法
 
- 1. 启动MongoDB
- 2. 配置config.py中各项参数
- 3. 启动spider.py进行生日等数据抓取
- 4. 运行post.py测试是否能正常发送生日祝福贴
+ 1. 使用pip或者其他方式正确安装好上述项目依赖包
+ 2. 启动MongoDB
+ 3. 配置config.py中各项参数
+ 4. 启动spider.py进行生日等数据抓取
+ 5. 运行post.py测试是否能正常发送生日祝福贴
  5. 配置cron规则，让post.py能够每天定时运行，并且保证MongoDB服务一直保持开启状态
 
 # 文件说明
